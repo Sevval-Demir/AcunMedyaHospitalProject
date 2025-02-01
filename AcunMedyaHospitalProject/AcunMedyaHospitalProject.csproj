@@ -1,0 +1,1380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AcunMedyaHospitalProject</RootNamespace>
+    <AssemblyName>AcunMedyaHospitalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44352</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Context\AppDbContext.cs" />
+    <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Entities\Admin.cs" />
+    <Compile Include="Entities\Appointment.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\Department.cs" />
+    <Compile Include="Entities\Doctor.cs" />
+    <Compile Include="Entities\Message.cs" />
+    <Compile Include="Entities\Service.cs" />
+    <Compile Include="Entities\Slider.cs" />
+    <Compile Include="Entities\Testimonial.cs" />
+    <Compile Include="Enums\AppointmentStatus.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DepartmentHelper.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\.gitignore" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\documentation\documentation.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\documentation\script.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\documentation\style.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\screenshot.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\css\style.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\auth\lockscreen-bg.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\auth\login-bg.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\auth\register-bg.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\browser-logo\chrome-logo.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\browser-logo\explorer-logo.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\browser-logo\firefox-logo.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\browser-logo\netscape-logo.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\browser-logo\opera-logo.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\browser-logo\safari-logo.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_1.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_10.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_11.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_12.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_2.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_3.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_4.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_5.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_6.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_7.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_8.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\carousel\banner_9.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\circle.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\circle.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\Group 4.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\img_1.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\img_2.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\img_3.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\img_4.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\dashboard\img_5.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces-clipart\pic-1.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces-clipart\pic-2.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces-clipart\pic-3.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces-clipart\pic-4.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face1.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face10.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face11.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face12.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face13.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face14.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face15.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face16.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face17.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face18.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face19.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face2.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face20.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face21.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face22.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face23.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face24.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face25.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face26.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face27.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face3.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face4.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face5.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face6.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face7.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face8.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\faces\face9.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\favicon.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\128\001-interface-1.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\128\002-tool.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\128\003-interface.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\128\004-folder-1.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\128\005-database.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\128\006-record.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\128\007-folder.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\128\008-archive.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\256\001-interface-1.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\256\002-tool.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\256\003-interface.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\256\004-folder-1.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\256\005-database.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\256\006-record.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\256\007-folder.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\256\008-archive.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\512\001-interface-1.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\512\002-tool.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\512\003-interface.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\512\004-folder-1.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\512\005-database.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\512\006-record.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\512\007-folder.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\512\008-archive.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\64\001-interface-1.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\64\002-tool.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\64\003-interface.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\64\004-folder-1.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\64\005-database.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\64\006-record.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\64\007-folder.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\file-icons\64\008-archive.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\lightbox\play-button.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\lightbox\thumb-v-v-1.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\lightbox\thumb-v-v-2.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\lightbox\thumb-v-y-1.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\lightbox\thumb-v-y-2.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\logo-mini.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\logo.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\logodark.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\logo_minidark.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\1.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\10.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\11.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\12.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\13.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\14.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\15.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\2.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\3.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\4.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\5.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\6.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\7.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\8.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\1280x768\9.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\1.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\10.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\11.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\12.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\13.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\14.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\15.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\2.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\3.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\4.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\5.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\6.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\7.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\8.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\samples\300x300\9.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\screenshots\default.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\screenshots\Horizontal-dark.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\screenshots\horizontal-light.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\screenshots\vertical-dark.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\screenshots\vertical-light.jpg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\sprites\blue.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\sprites\dark.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\sprites\flag.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\sprites\green.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\sprites\jsgrid-icons.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\sprites\red.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\images\sprites\yellow.png" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\chart.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\codeEditor.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\codemirror.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\dashboard.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\file-upload.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\hoverable-collapse.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\misc.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\off-canvas.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\select2.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\settings.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\tabs.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\js\typeahead.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\bootstrap-datepicker\bootstrap-datepicker.min.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\bootstrap-maxlength\bootstrap-maxlength.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\chart.js\Chart.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\codemirror\ambiance.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\codemirror\codemirror.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\codemirror\codemirror.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\codemirror\javascript.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\codemirror\shell.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\css\vendor.bundle.base.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\css\flag-icon.min.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ad.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ae.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\af.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ag.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ai.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\al.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\am.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ao.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\aq.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ar.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\as.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\at.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\au.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\aw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ax.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\az.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ba.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bb.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bd.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\be.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bi.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bj.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bo.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bq.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\br.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bs.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\by.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\bz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ca.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cd.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ch.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ci.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ck.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\co.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cx.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cy.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\cz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\de.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\dj.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\dk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\dm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\do.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\dz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ec.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ee.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\eg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\eh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\er.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\es-ca.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\es.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\et.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\eu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\fi.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\fj.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\fk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\fm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\fo.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\fr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ga.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gb-eng.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gb-nir.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gb-sct.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gb-wls.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gb.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gd.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ge.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gi.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gp.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gq.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gs.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\gy.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\hk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\hm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\hn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\hr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ht.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\hu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\id.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ie.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\il.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\im.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\in.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\io.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\iq.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ir.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\is.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\it.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\je.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\jm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\jo.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\jp.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ke.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\kg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\kh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ki.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\km.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\kn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\kp.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\kr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\kw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ky.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\kz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\la.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\lb.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\lc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\li.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\lk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\lr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ls.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\lt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\lu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\lv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ly.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ma.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\md.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\me.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ml.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mo.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mp.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mq.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ms.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mx.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\my.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\mz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\na.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\nc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ne.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\nf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ng.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ni.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\nl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\no.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\np.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\nr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\nu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\nz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\om.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pa.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pe.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ph.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ps.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\pw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\py.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\qa.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\re.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ro.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\rs.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ru.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\rw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sa.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sb.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sd.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\se.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\si.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sj.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\so.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ss.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\st.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sx.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sy.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\sz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\td.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\th.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tj.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\to.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\tz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ua.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ug.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\um.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\un.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\us.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\uy.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\uz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\va.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\vc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ve.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\vg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\vi.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\vn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\vu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\wf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ws.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\xk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\ye.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\yt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\za.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\zm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\1x1\zw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ad.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ae.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\af.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ag.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ai.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\al.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\am.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ao.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\aq.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ar.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\as.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\at.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\au.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\aw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ax.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\az.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ba.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bb.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bd.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\be.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bi.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bj.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bo.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bq.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\br.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bs.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\by.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\bz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ca.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cd.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ch.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ci.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ck.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\co.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cx.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cy.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\cz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\de.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\dj.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\dk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\dm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\do.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\dz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ec.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ee.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\eg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\eh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\er.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\es-ca.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\es.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\et.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\eu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\fi.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\fj.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\fk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\fm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\fo.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\fr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ga.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gb-eng.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gb-nir.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gb-sct.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gb-wls.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gb.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gd.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ge.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gi.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gp.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gq.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gs.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\gy.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\hk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\hm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\hn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\hr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ht.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\hu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\id.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ie.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\il.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\im.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\in.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\io.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\iq.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ir.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\is.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\it.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\je.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\jm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\jo.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\jp.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ke.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\kg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\kh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ki.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\km.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\kn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\kp.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\kr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\kw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ky.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\kz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\la.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\lb.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\lc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\li.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\lk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\lr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ls.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\lt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\lu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\lv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ly.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ma.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\md.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\me.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ml.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mo.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mp.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mq.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ms.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mx.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\my.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\mz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\na.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\nc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ne.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\nf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ng.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ni.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\nl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\no.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\np.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\nr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\nu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\nz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\om.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pa.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pe.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ph.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ps.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\pw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\py.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\qa.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\re.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ro.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\rs.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ru.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\rw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sa.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sb.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sd.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\se.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sh.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\si.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sj.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\so.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ss.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\st.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sx.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sy.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\sz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\td.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\th.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tj.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tl.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\to.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tr.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tv.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\tz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ua.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ug.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\um.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\un.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\us.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\uy.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\uz.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\va.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\vc.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ve.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\vg.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\vi.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\vn.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\vu.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\wf.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ws.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\xk.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\ye.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\yt.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\za.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\zm.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flag-icon-css\flags\4x3\zw.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flot\jquery.flot.categories.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flot\jquery.flot.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flot\jquery.flot.pie.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flot\jquery.flot.resize.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\flot\jquery.flot.stack.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\jquery-asColorPicker\jquery-asColorPicker.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\jquery-asColor\jquery-asColor.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\jquery-asGradient\jquery-asGradient.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\jquery-file-upload\jquery.uploadfile.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\jquery-file-upload\uploadfile.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\js\vendor.bundle.base.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\mdi\css\materialdesignicons.min.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\moment\moment.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\moment\moment.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\pwstabs\jquery.pwstabs.min.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\pwstabs\jquery.pwstabs.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\select2-bootstrap-theme\select2-bootstrap.min.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\select2\select2.min.css" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\select2\select2.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\twbs-pagination\jquery.twbsPagination.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\typeahead.js\typeahead.bundle.min.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\gulp-tasks\inject.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\gulp-tasks\serve.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\gulp-tasks\vendors.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\gulpfile.js" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\index.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\pages\charts\chartjs.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\pages\forms\basic_elements.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\pages\icons\mdi.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\pages\tables\basic-table.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\pages\ui-features\buttons.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\pages\ui-features\dropdowns.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\pages\ui-features\typography.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\partials\_footer.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\partials\_navbar.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\partials\_settings-panel.html" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\partials\_sidebar.html" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\css\font-awesome.min.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\css\main.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\css\normalize.min.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\img\logo.png" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\index.html" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\js\custom.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\js\jquery-1.11.0.min.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\js\jquery.nav.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shAutoloader.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushAS3.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushBash.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushCpp.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushCSharp.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushCss.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushDelphi.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushDiff.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushErlang.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushGroovy.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushJava.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushJScript.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushPerl.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushPhp.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushPlain.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushPython.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushRuby.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushSass.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushScala.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushSql.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushVb.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shBrushXml.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\scripts\shLegacy.js" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shCore.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shCoreDefault.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shCoreDjango.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shCoreEclipse.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shCoreEmacs.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shCoreMDUltra.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shCoreMidnight.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shCoreRDark.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shThemeDefault.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shThemeDjango.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shThemeEclipse.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shThemeEmacs.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shThemeMDUltra.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shThemeMidnight.css" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\syntax-highlighter\styles\shThemeRDark.css" />
+    <Content Include="Templates\docmed-master\about.html" />
+    <Content Include="Templates\docmed-master\blog.html" />
+    <Content Include="Templates\docmed-master\contact.html" />
+    <Content Include="Templates\docmed-master\css\animate.css" />
+    <Content Include="Templates\docmed-master\css\bootstrap.min.css" />
+    <Content Include="Templates\docmed-master\css\flaticon.css" />
+    <Content Include="Templates\docmed-master\css\font-awesome.min.css" />
+    <Content Include="Templates\docmed-master\css\gijgo.css" />
+    <Content Include="Templates\docmed-master\css\magnific-popup.css" />
+    <Content Include="Templates\docmed-master\css\nice-select.css" />
+    <Content Include="Templates\docmed-master\css\owl.carousel.min.css" />
+    <Content Include="Templates\docmed-master\css\slicknav.css" />
+    <Content Include="Templates\docmed-master\css\style.css" />
+    <Content Include="Templates\docmed-master\css\theme-default.css" />
+    <Content Include="Templates\docmed-master\css\themify-icons.css" />
+    <Content Include="Templates\docmed-master\Department.html" />
+    <Content Include="Templates\docmed-master\Doctors.html" />
+    <Content Include="Templates\docmed-master\elements.html" />
+    <Content Include="Templates\docmed-master\fonts\fa-brands-400.svg" />
+    <Content Include="Templates\docmed-master\fonts\fa-regular-400.svg" />
+    <Content Include="Templates\docmed-master\fonts\fa-solid-900.svg" />
+    <Content Include="Templates\docmed-master\fonts\flaticon.css" />
+    <Content Include="Templates\docmed-master\fonts\Flaticon.svg" />
+    <Content Include="Templates\docmed-master\fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\docmed-master\fonts\gijgo-material.svg" />
+    <Content Include="Templates\docmed-master\fonts\themify.svg" />
+    <Content Include="Templates\docmed-master\img\about\1.png" />
+    <Content Include="Templates\docmed-master\img\about\2.png" />
+    <Content Include="Templates\docmed-master\img\about\business.png" />
+    <Content Include="Templates\docmed-master\img\banner\about_banner.png" />
+    <Content Include="Templates\docmed-master\img\banner\banner.png" />
+    <Content Include="Templates\docmed-master\img\banner\banner2.png" />
+    <Content Include="Templates\docmed-master\img\banner\bradcam.png" />
+    <Content Include="Templates\docmed-master\img\banner\bradcam2.png" />
+    <Content Include="Templates\docmed-master\img\banner\bradcam3.png" />
+    <Content Include="Templates\docmed-master\img\banner\emergency-1.png" />
+    <Content Include="Templates\docmed-master\img\banner\emergency-2.png" />
+    <Content Include="Templates\docmed-master\img\blog\author.png" />
+    <Content Include="Templates\docmed-master\img\blog\blog_1.png" />
+    <Content Include="Templates\docmed-master\img\blog\blog_2.png" />
+    <Content Include="Templates\docmed-master\img\blog\blog_3.png" />
+    <Content Include="Templates\docmed-master\img\blog\blog_4.png" />
+    <Content Include="Templates\docmed-master\img\blog\learn_about_bg.png" />
+    <Content Include="Templates\docmed-master\img\blog\single_blog_1.png" />
+    <Content Include="Templates\docmed-master\img\blog\single_blog_2.png" />
+    <Content Include="Templates\docmed-master\img\blog\single_blog_3.png" />
+    <Content Include="Templates\docmed-master\img\blog\single_blog_4.png" />
+    <Content Include="Templates\docmed-master\img\blog\single_blog_5.png" />
+    <Content Include="Templates\docmed-master\img\blog\slide_thumb_1.png" />
+    <Content Include="Templates\docmed-master\img\comment\comment_1.png" />
+    <Content Include="Templates\docmed-master\img\comment\comment_2.png" />
+    <Content Include="Templates\docmed-master\img\comment\comment_3.png" />
+    <Content Include="Templates\docmed-master\img\department\1.png" />
+    <Content Include="Templates\docmed-master\img\department\2.png" />
+    <Content Include="Templates\docmed-master\img\department\3.png" />
+    <Content Include="Templates\docmed-master\img\department\4.png" />
+    <Content Include="Templates\docmed-master\img\department\5.png" />
+    <Content Include="Templates\docmed-master\img\department\6.png" />
+    <Content Include="Templates\docmed-master\img\elements\a.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\a2.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\d.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\disabled-check.png" />
+    <Content Include="Templates\docmed-master\img\elements\disabled-radio.png" />
+    <Content Include="Templates\docmed-master\img\elements\f1.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\f2.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\f3.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\f4.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\f5.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\f6.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\f7.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\f8.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\g1.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\g2.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\g3.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\g4.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\g5.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\g6.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\g7.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\g8.jpg" />
+    <Content Include="Templates\docmed-master\img\elements\primary-check.png" />
+    <Content Include="Templates\docmed-master\img\elements\primary-radio.png" />
+    <Content Include="Templates\docmed-master\img\elements\success-check.png" />
+    <Content Include="Templates\docmed-master\img\elements\success-radio.png" />
+    <Content Include="Templates\docmed-master\img\experts\1.png" />
+    <Content Include="Templates\docmed-master\img\experts\2.png" />
+    <Content Include="Templates\docmed-master\img\experts\3.png" />
+    <Content Include="Templates\docmed-master\img\experts\4.png" />
+    <Content Include="Templates\docmed-master\img\experts\5.png" />
+    <Content Include="Templates\docmed-master\img\experts\6.png" />
+    <Content Include="Templates\docmed-master\img\experts\7.png" />
+    <Content Include="Templates\docmed-master\img\experts\8.png" />
+    <Content Include="Templates\docmed-master\img\experts\9.png" />
+    <Content Include="Templates\docmed-master\img\favicon.ico" />
+    <Content Include="Templates\docmed-master\img\favicon.png" />
+    <Content Include="Templates\docmed-master\img\footer_logo.png" />
+    <Content Include="Templates\docmed-master\img\instragram\1.png" />
+    <Content Include="Templates\docmed-master\img\instragram\2.png" />
+    <Content Include="Templates\docmed-master\img\instragram\3.png" />
+    <Content Include="Templates\docmed-master\img\instragram\4.png" />
+    <Content Include="Templates\docmed-master\img\instragram\5.png" />
+    <Content Include="Templates\docmed-master\img\logo.png" />
+    <Content Include="Templates\docmed-master\img\offers\1.png" />
+    <Content Include="Templates\docmed-master\img\offers\2.png" />
+    <Content Include="Templates\docmed-master\img\offers\3.png" />
+    <Content Include="Templates\docmed-master\img\post\next.png" />
+    <Content Include="Templates\docmed-master\img\post\post_1.png" />
+    <Content Include="Templates\docmed-master\img\post\post_10.png" />
+    <Content Include="Templates\docmed-master\img\post\post_2.png" />
+    <Content Include="Templates\docmed-master\img\post\post_3.png" />
+    <Content Include="Templates\docmed-master\img\post\post_4.png" />
+    <Content Include="Templates\docmed-master\img\post\post_5.png" />
+    <Content Include="Templates\docmed-master\img\post\post_6.png" />
+    <Content Include="Templates\docmed-master\img\post\post_7.png" />
+    <Content Include="Templates\docmed-master\img\post\post_8.png" />
+    <Content Include="Templates\docmed-master\img\post\post_9.png" />
+    <Content Include="Templates\docmed-master\img\post\preview.png" />
+    <Content Include="Templates\docmed-master\img\rooms\1.png" />
+    <Content Include="Templates\docmed-master\img\rooms\2.png" />
+    <Content Include="Templates\docmed-master\img\rooms\3.png" />
+    <Content Include="Templates\docmed-master\img\rooms\4.png" />
+    <Content Include="Templates\docmed-master\img\testmonial\1.png" />
+    <Content Include="Templates\docmed-master\img\testmonial\2.png" />
+    <Content Include="Templates\docmed-master\img\video\video.png" />
+    <Content Include="Templates\docmed-master\index.html" />
+    <Content Include="Templates\docmed-master\js\ajax-form.js" />
+    <Content Include="Templates\docmed-master\js\bootstrap.min.js" />
+    <Content Include="Templates\docmed-master\js\contact.js" />
+    <Content Include="Templates\docmed-master\js\gijgo.min.js" />
+    <Content Include="Templates\docmed-master\js\imagesloaded.pkgd.min.js" />
+    <Content Include="Templates\docmed-master\js\isotope.pkgd.min.js" />
+    <Content Include="Templates\docmed-master\js\jquery.ajaxchimp.min.js" />
+    <Content Include="Templates\docmed-master\js\jquery.counterup.min.js" />
+    <Content Include="Templates\docmed-master\js\jquery.form.js" />
+    <Content Include="Templates\docmed-master\js\jquery.magnific-popup.min.js" />
+    <Content Include="Templates\docmed-master\js\jquery.scrollUp.min.js" />
+    <Content Include="Templates\docmed-master\js\jquery.slicknav.min.js" />
+    <Content Include="Templates\docmed-master\js\jquery.validate.min.js" />
+    <Content Include="Templates\docmed-master\js\mail-script.js" />
+    <Content Include="Templates\docmed-master\js\main.js" />
+    <Content Include="Templates\docmed-master\js\nice-select.min.js" />
+    <Content Include="Templates\docmed-master\js\owl.carousel.min.js" />
+    <Content Include="Templates\docmed-master\js\plugins.js" />
+    <Content Include="Templates\docmed-master\js\popper.min.js" />
+    <Content Include="Templates\docmed-master\js\scrollIt.js" />
+    <Content Include="Templates\docmed-master\js\vendor\jquery-1.12.4.min.js" />
+    <Content Include="Templates\docmed-master\js\vendor\modernizr-3.5.0.min.js" />
+    <Content Include="Templates\docmed-master\js\waypoints.min.js" />
+    <Content Include="Templates\docmed-master\js\wow.min.js" />
+    <Content Include="Templates\docmed-master\main.html" />
+    <Content Include="Templates\docmed-master\readme.txt" />
+    <Content Include="Templates\docmed-master\single-blog.html" />
+    <Content Include="Templates\sweetAlert\sweetalert-dev.js" />
+    <Content Include="Templates\sweetAlert\sweetalert.css" />
+    <Content Include="Templates\sweetAlert\sweetalert.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\CHANGELOG.md" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\LICENSE" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\README.md" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\css\style.css.map" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Bold.eot" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Bold.ttf" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Bold.woff" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Bold.woff2" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Light.eot" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Light.ttf" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Light.woff" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Light.woff2" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Medium.eot" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Medium.ttf" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Medium.woff" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Medium.woff2" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Regular.eot" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Regular.ttf" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Regular.woff" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\fonts\rubik\Rubik-Regular.woff2" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_bar-loader.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_circle-loader.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_colored-balls.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_dot-opacity-loader.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_flip-square-loader.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_glowing-ball.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_jumping-dots-loader.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_loaders.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_moving-square-loader.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_pixel-loader.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_square-box.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_square-path-loader.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\loaders\_variables.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_animation.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_background.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_badges.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_blockqoute.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_breadcrumbs.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_buttons.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_cards.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_misc.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_no-ui-slider.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_pagination.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_popovers.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\mixins\_tooltips.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_ace.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_avgrund.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_codemirror.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_datepicker.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_flot-chart.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_full-calendar.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_jquery-file-upload.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_lists.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_pws-tabs.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_select2.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\plugin-overrides\_typeahead.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_background.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_badges.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_buttons.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_cards.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_checkbox-radio.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_dashboard.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_demo.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_dropdown.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_fonts.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_footer.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_forms.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_functions.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_icons.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_misc.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_preview.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_reset.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_tables.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_tabs.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_todo-list.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_typography.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_utilities.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\components\_widget-grid.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\style.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\vertical\_vertical-wrapper.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\_layouts.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\_navbar.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\_settings-panel.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\_sidebar.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\scss\_variables.scss" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\jquery-asGradient\jquery-asGradient.min.js.map" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\js\bootstrap.min.js.map" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\mdi\css\materialdesignicons.min.css.map" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\mdi\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\mdi\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Templates\Breeze-Free-Bootstrap-Admin-Template-1.0.0\template\package.json" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\.vscode\settings.json" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\docmed-master\210 Medical DOC\fonts\FontAwesome.otf" />
+    <Content Include="Templates\docmed-master\contact_process.php" />
+    <Content Include="Templates\docmed-master\css\style.map" />
+    <Content Include="Templates\docmed-master\css\theme-default.map" />
+    <Content Include="Templates\docmed-master\fonts\fa-brands-400.eot" />
+    <Content Include="Templates\docmed-master\fonts\fa-brands-400.ttf" />
+    <Content Include="Templates\docmed-master\fonts\fa-brands-400.woff" />
+    <Content Include="Templates\docmed-master\fonts\fa-brands-400.woff2" />
+    <Content Include="Templates\docmed-master\fonts\fa-regular-400.eot" />
+    <Content Include="Templates\docmed-master\fonts\fa-regular-400.ttf" />
+    <Content Include="Templates\docmed-master\fonts\fa-regular-400.woff" />
+    <Content Include="Templates\docmed-master\fonts\fa-regular-400.woff2" />
+    <Content Include="Templates\docmed-master\fonts\fa-solid-900.eot" />
+    <Content Include="Templates\docmed-master\fonts\fa-solid-900.ttf" />
+    <Content Include="Templates\docmed-master\fonts\fa-solid-900.woff" />
+    <Content Include="Templates\docmed-master\fonts\fa-solid-900.woff2" />
+    <Content Include="Templates\docmed-master\fonts\Flaticon.eot" />
+    <Content Include="Templates\docmed-master\fonts\Flaticon.ttf" />
+    <Content Include="Templates\docmed-master\fonts\Flaticon.woff" />
+    <Content Include="Templates\docmed-master\fonts\Flaticon.woff2" />
+    <Content Include="Templates\docmed-master\fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\docmed-master\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\docmed-master\fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\docmed-master\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Templates\docmed-master\fonts\FontAwesome.otf" />
+    <Content Include="Templates\docmed-master\fonts\gijgo-material.eot" />
+    <Content Include="Templates\docmed-master\fonts\gijgo-material.ttf" />
+    <Content Include="Templates\docmed-master\fonts\gijgo-material.woff" />
+    <Content Include="Templates\docmed-master\fonts\themify.eot" />
+    <Content Include="Templates\docmed-master\fonts\themify.ttf" />
+    <Content Include="Templates\docmed-master\fonts\themify.woff" />
+    <Content Include="Templates\docmed-master\scss\style.scss" />
+    <Content Include="Templates\docmed-master\scss\theme-default.scss" />
+    <Content Include="Templates\docmed-master\scss\_about.scss" />
+    <Content Include="Templates\docmed-master\scss\_blog.scss" />
+    <Content Include="Templates\docmed-master\scss\_blog_part.scss" />
+    <Content Include="Templates\docmed-master\scss\_bradcam.scss" />
+    <Content Include="Templates\docmed-master\scss\_btn.scss" />
+    <Content Include="Templates\docmed-master\scss\_contact.scss" />
+    <Content Include="Templates\docmed-master\scss\_department.scss" />
+    <Content Include="Templates\docmed-master\scss\_elements.scss" />
+    <Content Include="Templates\docmed-master\scss\_emergency_contact.scss" />
+    <Content Include="Templates\docmed-master\scss\_experts.scss" />
+    <Content Include="Templates\docmed-master\scss\_extend.scss" />
+    <Content Include="Templates\docmed-master\scss\_footer.scss" />
+    <Content Include="Templates\docmed-master\scss\_header.scss" />
+    <Content Include="Templates\docmed-master\scss\_mixins.scss" />
+    <Content Include="Templates\docmed-master\scss\_offers.scss" />
+    <Content Include="Templates\docmed-master\scss\_responsive.scss" />
+    <Content Include="Templates\docmed-master\scss\_section_title.scss" />
+    <Content Include="Templates\docmed-master\scss\_service.scss" />
+    <Content Include="Templates\docmed-master\scss\_slick-nav.scss" />
+    <Content Include="Templates\docmed-master\scss\_slider.scss" />
+    <Content Include="Templates\docmed-master\scss\_tesmonial.scss" />
+    <Content Include="Templates\docmed-master\scss\_varriable.scss" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\AdminLayout\Index.cshtml" />
+    <Content Include="Views\AdminLayout\PartialHeader.cshtml" />
+    <Content Include="Views\AdminLayout\PartialSidebar.cshtml" />
+    <Content Include="Views\AdminLayout\PartialNavbar.cshtml" />
+    <Content Include="Views\AdminLayout\PartialFooter.cshtml" />
+    <Content Include="Views\AdminLayout\PartialScripts.cshtml" />
+    <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\Doctor\CreateDoctor.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Department\CreateDepartment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63432</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44352/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

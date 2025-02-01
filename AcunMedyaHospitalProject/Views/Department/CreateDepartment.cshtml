@@ -1,0 +1,35 @@
+﻿@model AcunMedyaHospitalProject.Entities.Department
+@{
+    ViewBag.Title = "CreateDepartment";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>CreateDepartment</h2>
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Bölüm Ekleme Formu</h4>
+            <p class="card-description">Hastaneye yeni bölüm girişini bu formdan yapabilirsiniz.</p>
+            <form class="forms-sample">
+                <div class="form-group">
+                    <label for="exampleInputUsername1">Ad: </label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.Name)</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Açıklama: </label>
+                    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.Description)</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Resim Urlsi: </label>
+                    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.ImageUrl)</span>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2"> Kaydet </button>
+
+            </form>
+        </div>
+    </div>
+</div>

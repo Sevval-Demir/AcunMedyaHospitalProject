@@ -1,0 +1,52 @@
+﻿@model IList<AcunMedyaHospitalProject.Entities.Department>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Bölüm Tablosu</h4>
+            <p class="card-description">
+                Bölüm bilgilerini bu tablodan görebilirsiniz.
+            </p>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>İsim</th>
+                            <th>Resim</th>
+                            <th>Açıklama</th>
+                            <th>Bölümün Doktorları</th>
+                            <th>Güncelle</th>
+                            <th>Kaldır</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Name</td>
+                                <td>
+                                    <img src="@item.ImageUrl" />
+                                </td>
+                                <td>
+                                    @item.Description
+                                </td>
+                                <td><a class="btn btn-primary" href="#">Doktorlar</a></td>
+                                <td><a class="btn btn-success" href="/Department/UpdateDepartment/@item.Id">Güncelleme</a></td>
+                                <td><a class="btn btn-danger" href="/Department/RemoveDepartment/@item.Id">Kaldır</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a class="btn btn-secondary" href="/Department/CreateDepartment">Bölüm Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>

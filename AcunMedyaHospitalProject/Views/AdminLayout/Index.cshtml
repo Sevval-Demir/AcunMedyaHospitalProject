@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@Html.Action("PartialHeader", "AdminLayout");
+<body>
+    <div class="container-scroller">
+        @Html.Action("PartialSidebar", "AdminLayout");
+        <div class="container-fluid page-body-wrapper">
+            
+            @Html.Action("PartialNavbar", "AdminLayout");
+            <div class="main-panel">
+                <div class="content-wrapper pb-0">
+                    @RenderBody()
+                </div>
+                @Html.Action("PartialFooter", "AdminLayout");
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    @Html.Action("PartialScripts", "AdminLayout");
+</body>
+</html>

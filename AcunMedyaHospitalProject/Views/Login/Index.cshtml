@@ -1,0 +1,18 @@
+﻿@model AcunMedyaHospitalProject.Entities.Admin
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Giriş Sayfası</h2>
+
+<form method="post">
+    <label>Kullanıcı Adı:</label>
+    @Html.TextBoxFor(x => x.UserName)
+    <br />
+    <label>Şifre: </label>
+    @Html.PasswordFor(x => x.Password)
+    <br />
+    <p class="text-danger">@Html.ValidationSummary()</p>
+    <button type="submit">Giriş Yap</button>
+</form>
+
