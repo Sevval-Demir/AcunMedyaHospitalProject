@@ -1,0 +1,30 @@
+﻿@model List<AcunMedyaHospitalProject.Entities.Doctor>
+<div class="expert_doctors_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="doctors_title mb-55">
+                    <h3>Uzman Doktorlarımız</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="expert_active owl-carousel">
+                    @foreach (var item in Model)
+                    {
+                        <div class="single_expert">
+                            <div class="expert_thumb">
+                                <img src="@item.ImageUrl" alt="">
+                            </div>
+                            <div class="experts_name text-center">
+                                <h3>@item.FullName</h3>
+                                <span>@item.Department.Name</span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,17 +1,16 @@
-﻿using AcunMedyaHospitalProject.Entities;
+﻿using AcunMedyaHospitalProject.Context;
+using AcunMedyaHospitalProject.Entities;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace AcunMedyaHospitalProject.Controllers
 {
-    private readonly AppDbContext db = new AppDbContext();
     public class DepartmentController : Controller
     {
-        // GET: Department
+        private readonly AppDbContext db = new AppDbContext();
         public ActionResult Index()
         {
             var departments = db.Departments.ToList();
@@ -25,12 +24,13 @@ namespace AcunMedyaHospitalProject.Controllers
         [HttpPost]
         public ActionResult CreateDepartment(Department department)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-               db.Departments.Add(department);
+                db.Departments.Add(department);
                 db.SaveChanges();
-                return RedirectToAction("Index","Department");
+                return RedirectToAction("Index", "Department");
             }
             return View(department);
         }
+    }
 }

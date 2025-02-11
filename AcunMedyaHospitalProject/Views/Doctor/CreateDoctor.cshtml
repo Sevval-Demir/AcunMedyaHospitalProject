@@ -4,18 +4,18 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<h2>CreateDoctor</h2>
+@using System.Web.Mvc;
 
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Doktor Ekleme Formu</h4>
             <p class="card-description">Hastaneye yeni doktor girişini bu formdan yapabilirsiniz.</p>
-            <form class="forms-sample">
+            <form method="post" class="forms-sample">
                 <div class="form-group">
                     <label for="exampleInputUsername1">Ad: </label>
-                    @Html.TextBoxFor(x => x.FirstName, new {@class="form-control"})
-                    <span class="text-danger">@Html.ValidationMessageFor(x=>x.FirstName)</span>
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.FirstName)</span>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Soyad: </label>
@@ -29,12 +29,10 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputConfirmPassword1">Bölüm</label>
-                   @Html.DropDownListFor(x => x.DepartmentId, (SelectList)TempData["Departments"],"Bölüm Seçin",new {@class="form-control"})
-                    <span class="text-danger">@Html.ValidationMessageFor(x => x.DepartmentId,"Lütfen Bölüm Seçin")</span>
+                    @Html.DropDownListFor(x => x.DepartmentId, (SelectList)TempData["Departments"], "Bölüm Seçin", new { @class = "form-control" })
+                    <span class="text-danger">@Html.ValidationMessageFor(x => x.DepartmentId, "Lütfen bölüm seçin")</span>
                 </div>
-                
                 <button type="submit" class="btn btn-primary mr-2"> Kaydet </button>
-                
             </form>
         </div>
     </div>

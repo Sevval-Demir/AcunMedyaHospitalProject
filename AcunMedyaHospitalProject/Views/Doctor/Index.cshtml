@@ -1,10 +1,8 @@
-﻿@Model IList<AcunMedyaHospitalProject.Entities.Doctor>
+﻿@model IList<AcunMedyaHospitalProject.Entities.Doctor>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
-
-<h2>Doktor Bilgileri</h2>
 
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
@@ -21,6 +19,8 @@
                             <th>İsim</th>
                             <th>Resim</th>
                             <th>Bölümü</th>
+                            <th>Güncelle</th>
+                            <th>Kaldır</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,7 +41,7 @@
                         }
                     </tbody>
                 </table>
-<a class="btn btn-secondary" href="/Doctor/CreateDoctor">Doktor Ekle</a>
+                <a class="btn btn-secondary" href="/Doctor/CreateDoctor">Doktor Ekle</a>
             </div>
         </div>
     </div>

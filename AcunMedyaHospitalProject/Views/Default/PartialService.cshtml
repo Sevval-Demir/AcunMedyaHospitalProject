@@ -1,0 +1,28 @@
+﻿@model List<AcunMedyaHospitalProject.Entities.Service>
+
+    <div class="service_area">
+        <div class="container p-0">
+            @for (int i = 0; i < Model.Count / 3; i++)
+            {
+
+                <div class="row no-gutters">
+                    @for (int j = (0 + i); j < (i + 3); j++)
+                    {
+
+
+                        <div class="col-xl-4 col-md-4">
+                            <div class="single_service">
+                                <div class="icon">
+                                    <i class="flaticon-electrocardiogram"></i>
+                                </div>
+                                <h3>@Model[i].Name</h3>
+                                <p>@Model[i].Description</p>
+                                <a href="@Model[i].ButtonLink" class="boxed-btn3-white">@Model[i].ButtonName</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            }
+        </div>
+    </div>

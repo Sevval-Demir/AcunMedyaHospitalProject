@@ -1,0 +1,29 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+@Html.Action("PartialHeader","UILayout")
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+    <!-- header-start -->
+    @Html.Action("PartialSiteHeader","UILayout")
+    <!-- header-end -->
+    @RenderBody()
+    <!-- footer start -->
+    @Html.Action("PartialFooter", "UILayout")
+    <!-- footer end  -->
+    <!-- link that opens popup -->
+    <!-- form itself end-->
+    @Html.Action("PartialAppointmentForm", "UILayout")
+    <!-- form itself end -->
+    <!-- JS here -->
+    @Html.Action("PartialScripts", "UILayout")
+</body>
+
+</html>

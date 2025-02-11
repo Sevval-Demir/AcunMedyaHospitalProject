@@ -1,0 +1,35 @@
+﻿@model List<AcunMedyaHospitalProject.Entities.Department>
+    <div class="our_department_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-55">
+                        <h3>Bölümlerimiz</h3>
+                        <p>
+                            Hastanemizde hizmet veren bölümlerimiz hakkında detaylı bilgi alabilirsiniz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="single_department">
+                            <div class="department_thumb">
+                                <img src="@item.ImageUrl" alt="">
+                            </div>
+                            <div class="department_content">
+                                <h3><a href="#">@item.Name</a></h3>
+                                <p>@item.Description</p>
+                                <a href="#" class="learn_more">Daha fazlası</a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
