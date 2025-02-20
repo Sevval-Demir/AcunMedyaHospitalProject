@@ -1,12 +1,12 @@
 ﻿@model AcunMedyaHospitalProject.Entities.Appointment
-<form id="test-form" class="white-popup-block mfp-hide">
+<form action="/UILayout/MakeAppointment"  method="post" id="test-form" class="white-popup-block mfp-hide">
     <div class="popup_box ">
         <div class="popup_inner">
             <h3>Randevu Al</h3>
             <form action="#">
                 <div class="row">
                     <div class="col-xl-6">
-                        <input id="datepicker" name="Date" placeholder="Tarih Seçin">
+                        <input id="datetime-local" name="Date" placeholder="Tarih Seçin">
                     </div>
                     <div class="col-xl-6">
                         <input type="time" id="timePicker" name="Time" placeholder="Saat">
@@ -15,11 +15,8 @@
                         @Html.DropDownList("Department", (SelectList)TempData["Departments"], "Bölüm Seçin", new { @class = "nice-select form-select wide", @id = "department-select" })
                     </div>
                     <div class="col-xl-6">
-                        <select class="form-select wide" id="default-select" class="">
-                            <option data-display="Doctors">Doctors</option>
-                            <option value="1">Mirazul Alom</option>
-                            <option value="2">Monzul Alom</option>
-                            <option value="3">Azizul Isalm</option>
+                        <select class="nice-select form-select wide" name="DoctorId" id="doctor-select">
+                            <option data-display="Doctors">Doktor seçin</option>
                         </select>
                     </div>
                     <div class="col-xl-6">
@@ -42,3 +39,24 @@
         </div>
     </div>
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#department-select').change(function () {
+            var dId = $(this).val();
+            $.ajax({
+                url: '@Url.Action("GetDoctorsByDepartmentId","UILayout")',
+                type: 'GET',
+                data: { departmentId: dId },
+                succes: function (data) {
+                    var doctorSelect = $('#doctor-select');
+                    doctorSelect.empty();
+                    doctorSelect.append('<option data-display="Doctors">Doktor seçin</option>')
+                    $.each(data, function (index, doctor) {
+                        doctorSelect.append('<option value="' + doctor.Id + '">' + doctor.FirstName + ' ' + doctor.LastName+ '</option>');
+                    });
+                }
+            });
+        });
+    })
+</script>

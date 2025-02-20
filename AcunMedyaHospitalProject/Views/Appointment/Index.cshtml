@@ -1,0 +1,75 @@
+﻿@model List<AcunMedyaHospitalProject.Entities.Appointment>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@{ 
+    string GetStatus(AcunMedyaHospitalProject.Enums.AppointmentStatus status)
+    {
+        switch(status)
+        {
+            case AcunMedyaHospitalProject.Enums.AppointmentStatus.Pending:
+                return "warning";
+            case AcunMedyaHospitalProject.Enums.AppointmentStatus.Approved:
+                return "success";
+            case AcunMedyaHospitalProject.Enums.AppointmentStatus.Cancelled:
+                return "danger";
+        }
+        return "";
+    }
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Randevu Tablosu</h4>
+            <p class="card-description">
+                Randevu bilgilerini bu tablodan görebilirsiniz.
+            </p>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Doktor Adı</th>
+                            <th>Doktor Departmanı</th>
+                            <th>Tarih</th>
+                            <th>Hasta Adı</th>
+                            <th>Hasta Soyadı</th>
+                            <th>Hasta Telefonu</th>
+                            <th>Hasta Mail</th>
+                            <th>Randevu Durum</th>
+                            <th>Onayla</th>
+                            <th>İptal Et</th>
+                            <th>Güncelle</th>
+                            <th>Kaldır</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Doctor.FullName</td>
+                                <td>@item.Doctor.Department.Name</td>
+                                <td>@item.Date.ToString("d") @item.Time.ToString()</td>
+                                <td>@item.PatientFirstName</td>
+                                <td>@item.PatientLastName</td>
+                                <td>@item.PatientPhone</td>
+                                <td>@item.PatientEmail</td>
+                                <td><label class="text-@GetStatus(item.Status)">@item.Status</label></td>
+                                <td><a class="btn btn-success" href="/Appointment/ApproveAppointment/@item.Id">Onayla</a></td>
+                                <td><a class="btn btn-success" href="/Appointment/CancelAppointment/@item.Id">İptal Et</a></td>
+                                <td><a class="btn btn-success" href="/Appointment/UpdateAppointment/@item.Id">Güncelle</a></td>
+                                <td><a class="btn btn-success" href="/Appointment/RemoveAppointment/@item.Id">Kaldır</a></td>
+                               
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a class="btn btn-secondary" href="/Doctor/CreateDoctor">Doktor Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>

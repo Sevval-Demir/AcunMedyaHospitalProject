@@ -83,3 +83,4 @@ C:\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospi
 C:\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.pdb
 C:\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.Migrations.mig1deneme.resources
 C:\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.csproj.GenerateResource.cache
+C:\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.Migrations.mig1deneme1.resources

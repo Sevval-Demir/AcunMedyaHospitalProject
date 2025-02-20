@@ -123,9 +123,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\AppDbContext.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UILayoutController.cs" />
@@ -146,6 +149,10 @@
     <Compile Include="Migrations\202502111336348_mig1deneme.cs" />
     <Compile Include="Migrations\202502111336348_mig1deneme.Designer.cs">
       <DependentUpon>202502111336348_mig1deneme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202502131747068_mig1deneme1.cs" />
+    <Compile Include="Migrations\202502131747068_mig1deneme1.Designer.cs">
+      <DependentUpon>202502131747068_mig1deneme1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1316,6 +1323,11 @@
     <Content Include="Views\Default\PartialPatientComment.cshtml" />
     <Content Include="Views\Default\PartialDoctor.cshtml" />
     <Content Include="Views\Default\PartialEmergency.cshtml" />
+    <Content Include="Views\Appointment\Index.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\PartialStatistics.cshtml" />
+    <Content Include="Views\Dashboard\PartialLastAppointments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1350,6 +1362,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202502111336348_mig1deneme.resx">
       <DependentUpon>202502111336348_mig1deneme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202502131747068_mig1deneme1.resx">
+      <DependentUpon>202502131747068_mig1deneme1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
