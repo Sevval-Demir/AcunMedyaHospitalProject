@@ -1,2 +1,44 @@
 ﻿@model List<AcunMedyaHospitalProject.Entities.Appointment>
+<div class="col-xl-12 col-sm-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body px-0 overflow-auto">
+            <h4 class="card-title pl-4">Son Randevular</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Id</th>
+                            <th>Doktor Adı</th>
+                            <th>Doktor Departmanı</th>
+                            <th>Tarih</th>
+                            <th>Hasta Adı</th>
+                            <th>Hasta Soyadı</th>
+                            <th>Hasta Telefon</th>
+                            <th>Hasta Mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Doctor.FullName</td>
+                                <td>@item.Doctor.Department.Name</td>
+                                <td>@item.Date.ToString("d") @item.Time.ToString()</td>
+                                <td>@item.PatientFirstName</td>
+                                <td>@item.PatientLastName</td>
+                                <td>@item.PatientPhone</td>
+                                <td>@item.PatientEmail</td>
+                            </tr>
+                        }
 
+                    </tbody>
+                </table>
+            </div>
+            <a class="text-black mt-3 d-block pl-4" href="/Appointment/Index">
+                <span class="font-weight-medium h6">Tüm randevuları göster</span>
+                <i class="mdi mdi-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
