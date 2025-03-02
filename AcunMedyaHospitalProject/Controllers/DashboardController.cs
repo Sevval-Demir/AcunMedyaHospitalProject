@@ -29,5 +29,14 @@ namespace AcunMedyaHospitalProject.Controllers
             var value = db.Appointments.OrderByDescending(x => x.CreatedDate).Take(5).ToList();
             return PartialView(value);
         }
+        public ActionResult PartialGrapich()
+        {
+
+            ViewBag.DoctorCount = db.Doctors.Count();
+            ViewBag.ServiceCount = db.Services.Count();
+            ViewBag.AppointmentCount = db.Appointments.Count();
+            ViewBag.DepartmentCount = db.Departments.Count();
+            return PartialView();
+        }
     }
 }

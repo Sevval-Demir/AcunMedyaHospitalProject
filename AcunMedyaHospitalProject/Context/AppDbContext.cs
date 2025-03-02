@@ -18,6 +18,7 @@ namespace AcunMedyaHospitalProject.Context
         public DbSet<Service> Services { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<PatientComment> PatientComments { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
     }
 
 

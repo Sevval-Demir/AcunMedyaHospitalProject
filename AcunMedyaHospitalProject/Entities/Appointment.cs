@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -11,6 +12,7 @@ namespace AcunMedyaHospitalProject.Entities
     {
         public int Id { get; set; }
         public int DoctorId { get; set; }
+        public int DepartmentId { get; set; }
 
         [DataType(DataType.Date)]
         public  DateTime Date { get; set; }
@@ -23,6 +25,7 @@ namespace AcunMedyaHospitalProject.Entities
         public string PatientEmail { get; set; }
         public AppointmentStatus Status { get; set; }
         public virtual Doctor Doctor { get; set; }
+        [Column(TypeName = "datetime")]
         public DateTime CreatedDate { get; set; }
     }
 }

@@ -1,0 +1,23 @@
+﻿@model AcunMedyaHospitalProject.Entities.Department
+@{
+    ViewBag.Title = "UpdateDepartment";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Bölüm Güncelleme Sayfası</h2>
+<div class="container">
+    <form method="post">
+        @Html.HiddenFor(x => x.Id)
+        <label>Bölüm Adı</label>
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+        <label>Bölüm Açıklaması</label>
+        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+        <br />
+        <label>Bölüm Resimi</label>
+        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Bölüm Kaydet</button>
+        <br />
+    </form>
+</div>

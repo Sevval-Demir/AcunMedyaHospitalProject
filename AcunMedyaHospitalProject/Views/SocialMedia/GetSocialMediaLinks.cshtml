@@ -1,0 +1,30 @@
+﻿@model List<AcunMedyaHospitalProject.Entities.SocialMedia>
+
+<div class="socail_links">
+    <ul>
+        @foreach (var socialMedia in Model)
+        {
+            <li>
+                <a href="@socialMedia.Link" target="_blank">
+                    @if (socialMedia.Name.ToLower() == "facebook")
+                    {
+                        <i class="ti-facebook"></i>
+                    }
+                    else if (socialMedia.Name.ToLower() == "twitter")
+                    {
+                        <i class="ti-twitter-alt"></i>
+                    }
+                    else if (socialMedia.Name.ToLower() == "instagram")
+                    {
+                        <i class="fa fa-instagram"></i>
+                    }
+                    else if (socialMedia.Name.ToLower() == "linkedin")
+                    {
+                        <i class="fa fa-linkedin"></i>
+                    }
+
+                </a>
+            </li>
+        }
+    </ul>
+</div>

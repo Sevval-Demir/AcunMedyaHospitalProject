@@ -1,0 +1,10 @@
+﻿@model IEnumerable<AcunMedyaHospitalProject.Entities.SocialMedia>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="@item.Link" target="_blank">@item.Name</a>
+        </li>
+    }
+</ul>

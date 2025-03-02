@@ -44,5 +44,31 @@ namespace AcunMedyaHospitalProject.Controllers
             TempData["Departments"] = DepartmentHelper.GetDepartments();
             return View(doctor);
         }
+        [HttpGet]
+        public ActionResult UpdateDoctor(int Id)
+        {
+            TempData["Departments"] = DepartmentHelper.GetDepartments();
+            var doctor = db.Doctors.Find(Id);
+            return View(doctor);
+        }
+        [HttpPost]
+        public ActionResult UpdateDoctor(Doctor doctor)
+        {
+            var updatedDoctor = db.Doctors.Find(doctor.Id);
+            updatedDoctor.FirstName = doctor.FirstName;
+            updatedDoctor.LastName = doctor.LastName;
+            updatedDoctor.Department.Name = doctor.Department.Name;
+            db.SaveChanges();
+
+            TempData["Departments"] = DepartmentHelper.GetDepartments();
+            return RedirectToAction("Index");
+        }
+        public ActionResult DeleteDoctor(int id)
+        {
+            var doctor = db.Doctors.Find(id);
+            db.Doctors.Remove(doctor);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Doctor");
+        }
     }
 }

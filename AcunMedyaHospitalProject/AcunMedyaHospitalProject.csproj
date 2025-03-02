@@ -124,6 +124,7 @@
     <Compile Include="Context\AppDbContext.cs" />
     <Compile Include="Controllers\AdminLayoutController.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
@@ -131,6 +132,9 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\SocialMediaController.cs" />
     <Compile Include="Controllers\UILayoutController.cs" />
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\Appointment.cs" />
@@ -141,6 +145,7 @@
     <Compile Include="Entities\Service.cs" />
     <Compile Include="Entities\Slider.cs" />
     <Compile Include="Entities\PatientComment.cs" />
+    <Compile Include="Entities\SocialMedia.cs" />
     <Compile Include="Enums\AppointmentStatus.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -153,6 +158,10 @@
     <Compile Include="Migrations\202502131747068_mig1deneme1.cs" />
     <Compile Include="Migrations\202502131747068_mig1deneme1.Designer.cs">
       <DependentUpon>202502131747068_mig1deneme1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202503021326561_NewChanges.cs" />
+    <Compile Include="Migrations\202503021326561_NewChanges.Designer.cs">
+      <DependentUpon>202503021326561_NewChanges.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1328,6 +1337,15 @@
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Dashboard\PartialStatistics.cshtml" />
     <Content Include="Views\Dashboard\PartialLastAppointments.cshtml" />
+    <Content Include="Views\Appointment\UpdateAppointment.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Dashboard\PartialGrapich.cshtml" />
+    <Content Include="Views\Department\UpdateDepartment.cshtml" />
+    <Content Include="Views\Doctor\UpdateDoctor.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\SocialMedia\Index.cshtml" />
+    <Content Include="Views\SocialMedia\GetSocialMediaLinks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1365,6 +1383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202502131747068_mig1deneme1.resx">
       <DependentUpon>202502131747068_mig1deneme1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503021326561_NewChanges.resx">
+      <DependentUpon>202503021326561_NewChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

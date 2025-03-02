@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AcunMedyaHospitalProject.Entities.Department>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="col-xl-12 col-lg-12 stretch-card grid-margin">
+    <!-- col-xl-6'dan col-xl-12'ye değiştirildi -->
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">İstatistik Grafiği</h4>
+            <canvas id="statisticsChart" style="width: 100%; height: 500px;"></canvas> <!-- Genişlik ve yükseklik ayarlandı -->
+        </div>
+    </div>
+</div>
+
+<script>
+    var ctx = document.getElementById('statisticsChart').getContext('2d');
+    var statisticsChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Bölüm Sayısı', 'Doktor Sayısı', 'Randevu Sayısı', 'Servis Sayısı'],
+            datasets: [{
+                label: 'Sayısı',
+                data: [@ViewBag.DepartmentCount, @ViewBag.DoctorCount, @ViewBag.AppointmentCount, @ViewBag.ServiceCount],
+                backgroundColor: [
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+

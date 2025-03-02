@@ -1,0 +1,40 @@
+﻿@model List<AcunMedyaHospitalProject.Entities.Appointment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Bekleyen Randevular</h2>
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Doktor Adı</th>
+                <th>Doktor Departmanı</th>
+                <th>Tarih</th>
+                <th>Hasta Adı</th>
+                <th>Hasta Soyadı</th>
+                <th>Hasta Telefon</th>
+                <th>Hasta Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Doctor.FullName</td>
+                    <td>@item.Doctor.Department.Name</td>
+                    <td>@item.Date.ToString("d") @item.Time.ToString()</td>
+                    <td>@item.PatientFirstName</td>
+                    <td>@item.PatientLastName</td>
+                    <td>@item.PatientPhone</td>
+                    <td>@item.PatientEmail</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

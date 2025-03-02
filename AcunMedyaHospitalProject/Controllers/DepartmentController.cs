@@ -32,5 +32,36 @@ namespace AcunMedyaHospitalProject.Controllers
             }
             return View(department);
         }
+        [HttpGet]
+        public ActionResult UpdateDepartment(int id)
+        {
+            var department = db.Departments.Find(id);
+            if (department == null)
+            {
+                return HttpNotFound();
+            }
+            return View(department);
+        }
+        [HttpPost]
+        public ActionResult UpdateDepartment(Department department)
+        {
+            var updatedDepartment = db.Departments.Find(department.Id);
+            updatedDepartment.Name = department.Name;
+            updatedDepartment.Description = department.Description;
+            updatedDepartment.ImageUrl = department.ImageUrl;
+            db.SaveChanges();
+            return RedirectToAction("Index", "Department");
+        }
+        public ActionResult DeleteDepartment(int id)
+        {
+            var department = db.Departments.Find(id);
+            if (department == null)
+            {
+                return HttpNotFound();
+            }
+            db.Departments.Remove(department);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Department");
+        }
     }
 }
