@@ -4,15 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace AcunMedyaHospitalProject.Controllers
 {
     [Authorize]
     public class AppointmentController : Controller
     {
-       private readonly AppDbContext db=new AppDbContext();
+        private readonly AppDbContext db = new AppDbContext();
         public ActionResult Index()
         {
+
             var values = db.Appointments.ToList();
             return View(values);
         }
@@ -22,18 +24,18 @@ namespace AcunMedyaHospitalProject.Controllers
             var appointments = db.Appointments.Where(x => x.DoctorId == id).ToList();
             return View("Index", appointments);
         }
+
         public ActionResult ApproveAppointment(int id)
         {
             var value = db.Appointments.Find(id);
-            value.Status=Enums.AppointmentStatus.Approved;
+            value.Status = Enums.AppointmentStatus.Approved;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
         public ActionResult CancelAppointment(int id)
         {
-            var value=db.Appointments.Find(id);
-            value.Status =Enums.AppointmentStatus.Cancelled;
+            var value = db.Appointments.Find(id);
+            value.Status = Enums.AppointmentStatus.Cancelled;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -44,36 +46,41 @@ namespace AcunMedyaHospitalProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
         [HttpGet]
         public ActionResult UpdateAppointment(int id)
         {
-            var value = db.Appointments.Include("Doctor").Include("Department").FirstOrDefault(x => x.Id == id);
-            TempData["Departments"]=new SelectList(db.Departments, "Id", "Name",value.DepartmentId);
-            TempData["Doctors"] = new SelectList(db.Doctors.Where(x => x.DepartmentId == value.DepartmentId), "Id", "Name", value.Id);
-            return View("UpdateAppointment",value);
+            var value = db.Appointments.Include("Doctor").Include("Department").FirstOrDefault(a => a.Id == id);
+            TempData["Departments"] = new SelectList(db.Departments, "Id", "Name", value.DepartmentId);
+            TempData["Doctors"] = new SelectList(db.Doctors.Where(d => d.DepartmentId == value.DepartmentId), "Id", "FullName", value.DoctorId);
+            return View("UpdateAppointment", value);
         }
+
 
         [HttpPost]
         public ActionResult UpdateAppointment(Entities.Appointment appointment)
         {
             var value = db.Appointments.Find(appointment.Id);
-            if(value==null)
+            if (value == null)
             {
-                return HttpNotFound();
+                // Randevu bulunamadı, uygun bir hata mesajı veya yönlendirme ekleyin
+                return HttpNotFound("Randevu bulunamadı.");
             }
+
+            // Geçerli bir DoctorId olup olmadığını kontrol edin
             var doctor = db.Doctors.Find(appointment.DoctorId);
-            if(doctor == null)
+            if (doctor == null)
             {
-                ModelState.AddModelError("DoctorId", "Doctor not found");
+                // Geçersiz DoctorId, uygun bir hata mesajı veya yönlendirme ekleyin
+                ModelState.AddModelError("DoctorId", "Geçersiz doktor seçimi.");
                 TempData["Departments"] = new SelectList(db.Departments, "Id", "Name", appointment.DepartmentId);
-                TempData["Doctors"] = new SelectList(db.Doctors.Where(x => x.DepartmentId == appointment.DepartmentId), "Id", "FullName", appointment.DoctorId);
+                TempData["Doctors"] = new SelectList(db.Doctors.Where(d => d.DepartmentId == appointment.DepartmentId), "Id", "FullName", appointment.DoctorId);
                 return View("UpdateAppointment", appointment);
             }
+
             value.PatientFirstName = appointment.PatientFirstName;
             value.PatientLastName = appointment.PatientLastName;
-            value.PatientEmail = appointment.PatientEmail;
             value.PatientPhone = appointment.PatientPhone;
+            value.PatientEmail = appointment.PatientEmail;
             value.Date = appointment.Date;
             value.Time = appointment.Time;
             value.DepartmentId = appointment.DepartmentId;
@@ -81,11 +88,55 @@ namespace AcunMedyaHospitalProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        
 
-        public JsonResult GetDoctors(int departmentId)
+        [HttpGet]
+        public ActionResult CreateAppointment()
         {
-            var doctors = db.Doctors.Where(x => x.DepartmentId == departmentId).ToList()
-                .Select(a => new { a.Id, FullName = a.FirstName + " " + a.LastName }).ToList();
+            // Departmanları alıyoruz
+            TempData["Departments"] = new SelectList(db.Departments, "Id", "Name");
+
+            // İlk departman için doktorları alıyoruz. (Bu, kullanıcı ilk kez formu açtığında varsayılan seçim olacak)
+            TempData["Doctors"] = new SelectList(Enumerable.Empty<SelectListItem>());
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateAppointment(Entities.Appointment appointment)
+        {
+            if (ModelState.IsValid)
+            {
+                // Geçerli bir doktor olup olmadığını kontrol et
+                var doctor = db.Doctors.Find(appointment.DoctorId);
+                if (doctor == null)
+                {
+                    // Geçersiz doktor seçimi durumunda hata mesajı ekle
+                    ModelState.AddModelError("DoctorId", "Geçersiz doktor seçimi.");
+                    TempData["Departments"] = new SelectList(db.Departments, "Id", "Name", appointment.DepartmentId);
+                    TempData["Doctors"] = new SelectList(db.Doctors.Where(d => d.DepartmentId == appointment.DepartmentId), "Id", "FullName", appointment.DoctorId);
+                    return View(appointment);
+                }
+
+                // Randevu verilerini kaydet
+                db.Appointments.Add(appointment);
+                db.SaveChanges();
+
+                // Randevu başarıyla oluşturulmuşsa Index sayfasına yönlendir
+                return RedirectToAction("Index");
+            }
+
+            // Eğer model geçerli değilse, formu tekrar göster
+            TempData["Departments"] = new SelectList(db.Departments, "Id", "Name", appointment.DepartmentId);
+            TempData["Doctors"] = new SelectList(db.Doctors.Where(d => d.DepartmentId == appointment.DepartmentId), "Id", "FullName", appointment.DoctorId);
+            return View(appointment);
+        }
+        [HttpGet]
+        public JsonResult GetDoctorsByDepartment(int departmentId)
+        {
+            var doctors = db.Doctors.Where(d => d.DepartmentId == departmentId)
+                                    .Select(d => new { d.Id, FullName = d.FirstName + " " + d.LastName })
+                                    .ToList();
             return Json(doctors, JsonRequestBehavior.AllowGet);
         }
 

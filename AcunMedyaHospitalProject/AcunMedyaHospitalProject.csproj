@@ -1346,6 +1346,7 @@
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\SocialMedia\Index.cshtml" />
     <Content Include="Views\SocialMedia\GetSocialMediaLinks.cshtml" />
+    <Content Include="Views\Appointment\CreateAppointment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

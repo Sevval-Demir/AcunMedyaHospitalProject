@@ -1,0 +1,84 @@
+﻿@model AcunMedyaHospitalProject.Entities.Appointment
+@{
+    ViewBag.Title = "CreateAppointment";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Randevu Oluştur</h2>
+<form action="@Url.Action("CreateAppointment", "Appointment")" method="post">
+    <!-- CSRF koruması için ekleyin -->
+    <div class="row">
+        <div class="col-xl-6 mb-3">
+            <label for="datePicker">Tarih Seçin</label>
+            <input type="datetime-local" id="datePicker" name="Date" class="form-control" placeholder="Tarih Seçin">
+        </div>
+        <div class="col-xl-6 mb-3">
+            <label for="timePicker">Saat</label>
+            <input type="time" id="timePicker" name="Time" class="form-control" placeholder="Saat">
+        </div>
+        <div class="col-xl-6 mb-3">
+            <label for="department-select">Bölüm Seçin</label>
+            @Html.DropDownList("DepartmentId", (SelectList)TempData["Departments"], "Bölüm Seçin", new { @class = "nice-select form-select wide", @id = "department-select" })
+        </div>
+        <div class="col-xl-6 mb-3">
+            <label for="doctor-select">Doktor Seçin</label>
+            @Html.DropDownList("DoctorId", (SelectList)TempData["Doctors"], "Doktor Seçin", new { @class = "nice-select form-select wide", @id = "doctor-select" })
+        </div>
+        <div class="col-xl-6 mb-3">
+            <label for="patientFirstName">Hasta Adı</label>
+            <input type="text" id="patientFirstName" name="PatientFirstName" class="form-control" placeholder="Hasta Adı">
+        </div>
+        <div class="col-xl-6 mb-3">
+            <label for="patientLastName">Hasta Soyadı</label>
+            <input type="text" id="patientLastName" name="PatientLastName" class="form-control" placeholder="Hasta Soyadı">
+        </div>
+        <div class="col-xl-6 mb-3">
+            <label for="patientPhone">Telefon</label>
+            <input type="text" id="patientPhone" name="PatientPhone" class="form-control" placeholder="Telefon">
+        </div>
+        <div class="col-xl-12 mb-3">
+            <label for="patientEmail">Email</label>
+            <input type="email" id="patientEmail" name="PatientEmail" class="form-control" placeholder="Email">
+        </div>
+        <div class="col-xl-12">
+            <button type="submit" class="boxed-btn3">Randevuyu Oluştur</button>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#department-select').change(function () {
+                var departmentId = $(this).val();
+                console.log("Seçilen Departman ID:", departmentId); // Debug için
+
+                $.ajax({
+                    url: '/Appointment/GetDoctorsByDepartment',
+                    type: 'GET',
+                    data: { departmentId: departmentId },
+                    success: function (data) {
+                        console.log("Gelen Doktorlar:", data); // Gelen veriyi kontrol et
+                        var doctorSelect = $('#doctor-select');
+                        doctorSelect.empty();
+                        doctorSelect.append('<option value="">Doktor seçin</option>');
+
+                        if (data.length === 0) {
+                            console.warn("Doktor listesi boş!");
+                        }
+
+                        $.each(data, function (i, doctor) {
+                            doctorSelect.append('<option value="' + doctor.Id + '">' + doctor.FullName + '</option>');
+                        });
+
+                        console.log("Dropdown'a doktorlar eklendi!");
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("AJAX Hatası:", status, error);
+                    }
+                });
+            });
+        });
+    </script>
+}

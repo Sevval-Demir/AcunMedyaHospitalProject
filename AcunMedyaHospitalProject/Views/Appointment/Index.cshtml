@@ -4,10 +4,10 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-@{ 
+@{
     string GetStatus(AcunMedyaHospitalProject.Enums.AppointmentStatus status)
     {
-        switch(status)
+        switch (status)
         {
             case AcunMedyaHospitalProject.Enums.AppointmentStatus.Pending:
                 return "warning";
@@ -20,12 +20,14 @@
     }
 }
 
+
+
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Randevu Tablosu</h4>
+            <h4 class="card-title">Randevu tablosu</h4>
             <p class="card-description">
-                Randevu bilgilerini bu tablodan görebilirsiniz.
+                Randevuların bilgileri bu alanda gözükecektir.
             </p>
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -37,7 +39,7 @@
                             <th>Tarih</th>
                             <th>Hasta Adı</th>
                             <th>Hasta Soyadı</th>
-                            <th>Hasta Telefonu</th>
+                            <th>Hasta Telefon</th>
                             <th>Hasta Mail</th>
                             <th>Randevu Durum</th>
                             <th>Onayla</th>
@@ -59,17 +61,19 @@
                                 <td>@item.PatientPhone</td>
                                 <td>@item.PatientEmail</td>
                                 <td><label class="text-@GetStatus(item.Status)">@item.Status</label></td>
-                                <td><a class="btn btn-success" href="/Appointment/ApproveAppointment/@item.Id">Onayla</a></td>
-                                <td><a class="btn btn-success" href="/Appointment/CancelAppointment/@item.Id">İptal Et</a></td>
+                                <td><a class="btn btn-info" href="/Appointment/ApproveAppointment/@item.Id">Onayla</a></td>
+                                <td><a class="btn btn-warning" href="/Appointment/CancelAppointment/@item.Id">İptal Et</a></td>
                                 <td><a class="btn btn-success" href="/Appointment/UpdateAppointment/@item.Id">Güncelle</a></td>
-                                <td><a class="btn btn-success" href="/Appointment/RemoveAppointment/@item.Id">Kaldır</a></td>
-                               
+                                <td><a class="btn btn-danger" href="/Appointment/RemoveAppointment/@item.Id">Kaldır</a></td>
                             </tr>
                         }
                     </tbody>
                 </table>
-                <a class="btn btn-secondary" href="/Doctor/CreateDoctor">Doktor Ekle</a>
             </div>
+        </div>
+        <div class="mb-3">
+            <a href="@Url.Action("CreateAppointment", "Appointment")" class="btn btn-primary">Yeni Randevu Ekle</a>
         </div>
     </div>
 </div>
+

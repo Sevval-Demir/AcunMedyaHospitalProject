@@ -5,7 +5,6 @@
 }
 
 <h2>Randevu Güncelle</h2>
-
 <form action="@Url.Action("UpdateAppointment", "Appointment")" method="post">
     <!-- CSRF koruması için ekleyin -->
     <!-- Randevu ID'sini gizli alan olarak ekleyin -->
@@ -49,23 +48,35 @@
 </form>
 
 
-
 @section Scripts {
     <script>
         $(document).ready(function () {
             $('#department-select').change(function () {
                 var departmentId = $(this).val();
+                console.log("Seçilen Departman ID:", departmentId); // Debug için
+
                 $.ajax({
-                    url: '@Url.Action("GetDoctorsByDepartment", "Appointment")',
+                    url: '/Appointment/GetDoctorsByDepartment',
                     type: 'GET',
                     data: { departmentId: departmentId },
                     success: function (data) {
+                        console.log("Gelen Doktorlar:", data); // Gelen veriyi kontrol et
                         var doctorSelect = $('#doctor-select');
                         doctorSelect.empty();
-                        doctorSelect.append('<option data-display="Doctors">Doktor seçin</option>');
+                        doctorSelect.append('<option value="">Doktor seçin</option>');
+
+                        if (data.length === 0) {
+                            console.warn("Doktor listesi boş!");
+                        }
+
                         $.each(data, function (i, doctor) {
                             doctorSelect.append('<option value="' + doctor.Id + '">' + doctor.FullName + '</option>');
                         });
+
+                        console.log("Dropdown'a doktorlar eklendi!");
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("AJAX Hatası:", status, error);
                     }
                 });
             });
