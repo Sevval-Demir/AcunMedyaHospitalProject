@@ -172,3 +172,4 @@ C:\Code\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedya
 C:\Code\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedy.77E5ADE4.Up2Date
 C:\Code\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.dll
 C:\Code\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.pdb
+C:\Code\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.Migrations.UpdateDatabaseSchema.resources

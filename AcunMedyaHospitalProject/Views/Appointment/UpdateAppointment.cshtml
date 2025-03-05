@@ -19,11 +19,13 @@
         </div>
         <div class="col-xl-6 mb-3">
             <label for="department-select">Bölüm Seçin</label>
-            @Html.DropDownList("DepartmentId", (SelectList)TempData["Departments"], "Bölüm Seçin", new { @class = "nice-select form-select wide", @id = "department-select" })
+            @Html.DropDownList("DoctorId", (SelectList)ViewBag.Doctors, "Doktor Seçin", new { @class = "nice-select form-select wide", @id = "doctor-select" })
+
         </div>
         <div class="col-xl-6 mb-3">
             <label for="doctor-select">Doktor Seçin</label>
-            @Html.DropDownList("DoctorId", (SelectList)TempData["Doctors"], "Doktor Seçin", new { @class = "nice-select form-select wide", @id = "doctor-select" })
+            @Html.DropDownList("DoctorId", (SelectList)ViewBag.Doctors, "Doktor Seçin", new { @class = "nice-select form-select wide", @id = "doctor-select" })
+
         </div>
         <div class="col-xl-6 mb-3">
             <label for="patientFirstName">Hasta Adı</label>
@@ -56,7 +58,7 @@
                 console.log("Seçilen Departman ID:", departmentId); // Debug için
 
                 $.ajax({
-                    url: '/Appointment/GetDoctorsByDepartment',
+                    url: '@Url.Action("GetDoctorsByDepartment", "Appointment")',
                     type: 'GET',
                     data: { departmentId: departmentId },
                     success: function (data) {

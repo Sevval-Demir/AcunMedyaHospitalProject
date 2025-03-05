@@ -10,19 +10,20 @@
     <div class="row">
         <div class="col-xl-6 mb-3">
             <label for="datePicker">Tarih Seçin</label>
-            <input type="datetime-local" id="datePicker" name="Date" class="form-control" placeholder="Tarih Seçin">
+            <input type="datetime-local" id="datePicker" name="Date" class="form-control" placeholder="Tarih Seçin" required>
         </div>
         <div class="col-xl-6 mb-3">
             <label for="timePicker">Saat</label>
-            <input type="time" id="timePicker" name="Time" class="form-control" placeholder="Saat">
+            <input type="time" id="timePicker" name="Time" class="form-control" placeholder="Saat" required>
         </div>
         <div class="col-xl-6 mb-3">
             <label for="department-select">Bölüm Seçin</label>
-            @Html.DropDownList("DepartmentId", (SelectList)TempData["Departments"], "Bölüm Seçin", new { @class = "nice-select form-select wide", @id = "department-select" })
+            @Html.DropDownList("DepartmentId", (SelectList)ViewBag.Departments, "Bölüm Seçin", new { @class = "nice-select form-select wide", @id = "department-select" })
+
         </div>
         <div class="col-xl-6 mb-3">
             <label for="doctor-select">Doktor Seçin</label>
-            @Html.DropDownList("DoctorId", (SelectList)TempData["Doctors"], "Doktor Seçin", new { @class = "nice-select form-select wide", @id = "doctor-select" })
+            @Html.DropDownList("DoctorId", (SelectList)ViewBag.Doctors, "Doktor Seçin", new { @class = "nice-select form-select wide", @id = "doctor-select" })
         </div>
         <div class="col-xl-6 mb-3">
             <label for="patientFirstName">Hasta Adı</label>
@@ -45,8 +46,6 @@
         </div>
     </div>
 </form>
-
-
 @section Scripts {
     <script>
         $(document).ready(function () {
@@ -55,7 +54,7 @@
                 console.log("Seçilen Departman ID:", departmentId); // Debug için
 
                 $.ajax({
-                    url: '/Appointment/GetDoctorsByDepartment',
+                    url: '@Url.Action("GetDoctorsByDepartment", "Appointment")',
                     type: 'GET',
                     data: { departmentId: departmentId },
                     success: function (data) {

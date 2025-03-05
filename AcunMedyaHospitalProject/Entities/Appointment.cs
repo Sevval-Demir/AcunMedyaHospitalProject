@@ -14,10 +14,12 @@ namespace AcunMedyaHospitalProject.Entities
         public int DoctorId { get; set; }
         public int DepartmentId { get; set; }
 
-        [DataType(DataType.Date)]
+        [Required]
+        [Column(TypeName = "datetime")]
         public  DateTime Date { get; set; }
+        [Required]
+        [Column(TypeName = "time")]
 
-        [DataType(DataType.Time)]
         public TimeSpan Time { get; set; }
         public string PatientFirstName { get; set; }
         public string PatientLastName { get; set; }
