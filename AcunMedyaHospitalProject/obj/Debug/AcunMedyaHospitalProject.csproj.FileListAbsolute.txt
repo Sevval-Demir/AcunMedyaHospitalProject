@@ -173,3 +173,4 @@ C:\Code\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedy.
 C:\Code\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.dll
 C:\Code\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.pdb
 C:\Code\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.Migrations.UpdateDatabaseSchema.resources
+C:\C#\AcunMedyaHospitalProject\AcunMedyaHospitalProject\obj\Debug\AcunMedyaHospitalProject.Migrations.UpdateDatabaseSchema.resources

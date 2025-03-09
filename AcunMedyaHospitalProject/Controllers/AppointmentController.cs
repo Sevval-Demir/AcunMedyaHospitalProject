@@ -107,31 +107,18 @@ namespace AcunMedyaHospitalProject.Controllers
         [HttpPost]
         public ActionResult CreateAppointment(Entities.Appointment appointment)
         {
-            Console.WriteLine("Gelen Date: " + appointment.Date);
-            Console.WriteLine("Gelen Time: " + appointment.Time);
 
-            if (ModelState.IsValid)
-            {
-                // Eğer tarih veya saat boşsa, hata mesajı ekleyelim
-                if (appointment.Date == DateTime.MinValue)
+                if (!ModelState.IsValid)
                 {
-                    ModelState.AddModelError("Date", "Geçerli bir tarih seçmelisiniz.");
-                    return View(appointment);
-                }
-
-                if (appointment.Time == TimeSpan.Zero)
-                {
-                    ModelState.AddModelError("Time", "Geçerli bir saat seçmelisiniz.");
+                    ViewBag.Departments = new SelectList(db.Departments, "Id", "Name");
+                    ViewBag.Doctors = new SelectList(Enumerable.Empty<SelectListItem>());
                     return View(appointment);
                 }
 
                 db.Appointments.Add(appointment);
                 db.SaveChanges();
-
                 return RedirectToAction("Index");
-            }
 
-            return View(appointment);
         }
 
 

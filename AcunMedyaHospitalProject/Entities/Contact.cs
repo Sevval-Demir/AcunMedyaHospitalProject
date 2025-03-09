@@ -12,6 +12,6 @@ namespace AcunMedyaHospitalProject.Entities
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Longitude { get; set; }
-        public string Latitude { get; set; }
+        public string Latitute { get; set; }
     }
 }
