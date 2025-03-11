@@ -1,30 +1,28 @@
 ﻿@model List<AcunMedyaHospitalProject.Entities.Slider>
-    <div class="slider_area">
-        <div class="slider_active owl-carousel">
+<div class="slider_area">
+    <div class="slider_active owl-carousel">
 
 
-            @foreach (var item in Model)
-            {
+        @foreach (var item in Model)
+        {
 
-                <div class="single_slider  d-flex align-items-center" style="background-image:@item.ImageUrl">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="slider_text ">
-                                    <h3>
-                                        <span>@item.Title</span>
-                                    </h3>
-                                    <p>
-                                        @item.Description
-                                    </p>
-                                    <a href="#" class="boxed-btn3">Hizmetlerimize göz atın</a>
-                                </div>
+            <div class="single_slider  d-flex align-items-center" style="background-image:@item.ImageUrl">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3>
+                                    <span>@item.Title</span>
+                                </h3>
+                                <p>
+                                    @item.Description
+                                </p>
+                                <a href="#" class="boxed-btn3">Hizmetlerimize göz atın</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-            }
-        </div>
+            </div>
+        }
     </div>
+</div>
