@@ -15,7 +15,7 @@ namespace AcunMedyaHospitalProject.Entities
         public int DepartmentId { get; set; }
 
         [Required]
-        [Column(TypeName = "datetime")]
+        [Column(TypeName = "datetime2")]
         public  DateTime Date { get; set; }
         [Required]
         [Column(TypeName = "time")]
@@ -27,7 +27,7 @@ namespace AcunMedyaHospitalProject.Entities
         public string PatientEmail { get; set; }
         public AppointmentStatus Status { get; set; }
         public virtual Doctor Doctor { get; set; }
-        [Column(TypeName = "datetime")]
+        [Column(TypeName = "datetime2")]
         public DateTime CreatedDate { get; set; }
     }
 }

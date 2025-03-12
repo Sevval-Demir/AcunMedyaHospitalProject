@@ -3,36 +3,28 @@
   "WorkspaceRootPath": "C:\\C#\\AcunMedyaHospitalProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|C:\\C#\\AcunMedyaHospitalProject\\acunmedyahospitalproject\\views\\appointment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\views\\appointment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\views\\appointment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|C:\\C#\\AcunMedyaHospitalProject\\acunmedyahospitalproject\\views\\default\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\views\\default\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\views\\default\\partialslider.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\views\\default\\partialslider.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\views\\default\\partialemergency.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\views\\default\\partialemergency.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\migrations\\202503112358175_updatedatecolumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\migrations\\202503112358175_updatedatecolumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\templates\\docmed-master\\about.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\templates\\docmed-master\\about.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\views\\appointment\\createappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\views\\appointment\\createappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\templates\\docmed-master\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\templates\\docmed-master\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|C:\\C#\\AcunMedyaHospitalProject\\acunmedyahospitalproject\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\views\\uilayout\\partialfooter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\views\\uilayout\\partialfooter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|c:\\c#\\acunmedyahospitalproject\\acunmedyahospitalproject\\views\\appointment\\updateappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{66F8B59F-3964-43EF-8D8B-C7C47CFD44FF}|AcunMedyaHospitalProject\\AcunMedyaHospitalProject.csproj|solutionrelative:acunmedyahospitalproject\\views\\appointment\\updateappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -59,79 +51,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PartialEmergency.cshtml",
-              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Default\\PartialEmergency.cshtml",
-              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Views\\Default\\PartialEmergency.cshtml",
-              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Default\\PartialEmergency.cshtml",
-              "RelativeToolTip": "AcunMedyaHospitalProject\\Views\\Default\\PartialEmergency.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-11T01:54:55.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "about.html",
-              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Templates\\docmed-master\\about.html",
-              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Templates\\docmed-master\\about.html",
-              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Templates\\docmed-master\\about.html",
-              "RelativeToolTip": "AcunMedyaHospitalProject\\Templates\\docmed-master\\about.html",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAAAJMAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-03-11T01:52:17.706Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PartialSlider.cshtml",
-              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Default\\PartialSlider.cshtml",
-              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Views\\Default\\PartialSlider.cshtml",
-              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Default\\PartialSlider.cshtml",
-              "RelativeToolTip": "AcunMedyaHospitalProject\\Views\\Default\\PartialSlider.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-11T01:41:51.153Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Templates\\docmed-master\\index.html",
-              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Templates\\docmed-master\\index.html",
-              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Templates\\docmed-master\\index.html",
-              "RelativeToolTip": "AcunMedyaHospitalProject\\Templates\\docmed-master\\index.html",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADwAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-03-11T01:39:57.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PartialFooter.cshtml",
-              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\UILayout\\PartialFooter.cshtml",
-              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Views\\UILayout\\PartialFooter.cshtml",
-              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\UILayout\\PartialFooter.cshtml",
-              "RelativeToolTip": "AcunMedyaHospitalProject\\Views\\UILayout\\PartialFooter.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADcAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-11T01:32:05.151Z",
+              "Title": "202503112358175_UpdateDateColumn.cs",
+              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Migrations\\202503112358175_UpdateDateColumn.cs",
+              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Migrations\\202503112358175_UpdateDateColumn.cs",
+              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Migrations\\202503112358175_UpdateDateColumn.cs",
+              "RelativeToolTip": "AcunMedyaHospitalProject\\Migrations\\202503112358175_UpdateDateColumn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T23:58:23.721Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Default\\Index.cshtml",
-              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Views\\Default\\Index.cshtml",
-              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Default\\Index.cshtml",
-              "RelativeToolTip": "AcunMedyaHospitalProject\\Views\\Default\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
+              "Title": "Appointment.cs",
+              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Entities\\Appointment.cs",
+              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Entities\\Appointment.cs",
+              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Entities\\Appointment.cs",
+              "RelativeToolTip": "AcunMedyaHospitalProject\\Entities\\Appointment.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAA6wB0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T23:56:53.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppointmentController.cs",
+              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Controllers\\AppointmentController.cs",
+              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Controllers\\AppointmentController.cs",
+              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Controllers\\AppointmentController.cs",
+              "RelativeToolTip": "AcunMedyaHospitalProject\\Controllers\\AppointmentController.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAgwI0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T22:30:42.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UpdateAppointment.cshtml",
+              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Appointment\\UpdateAppointment.cshtml",
+              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Views\\Appointment\\UpdateAppointment.cshtml",
+              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Appointment\\UpdateAppointment.cshtml",
+              "RelativeToolTip": "AcunMedyaHospitalProject\\Views\\Appointment\\UpdateAppointment.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAACkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-08T23:39:54.279Z",
+              "WhenOpened": "2025-03-11T22:30:38.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateAppointment.cshtml",
+              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Appointment\\CreateAppointment.cshtml",
+              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Views\\Appointment\\CreateAppointment.cshtml",
+              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Appointment\\CreateAppointment.cshtml",
+              "RelativeToolTip": "AcunMedyaHospitalProject\\Views\\Appointment\\CreateAppointment.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-11T22:30:37.471Z",
               "EditorCaption": ""
             },
             {
@@ -142,22 +121,9 @@
               "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Views\\Appointment\\Index.cshtml",
               "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Views\\Appointment\\Index.cshtml",
               "RelativeToolTip": "AcunMedyaHospitalProject\\Views\\Appointment\\Index.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAowDAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-05T18:11:56.101Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DoctorController.cs",
-              "DocumentMoniker": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Controllers\\DoctorController.cs",
-              "RelativeDocumentMoniker": "AcunMedyaHospitalProject\\Controllers\\DoctorController.cs",
-              "ToolTip": "C:\\C#\\AcunMedyaHospitalProject\\AcunMedyaHospitalProject\\Controllers\\DoctorController.cs",
-              "RelativeToolTip": "AcunMedyaHospitalProject\\Controllers\\DoctorController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAQwDQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T18:11:16.626Z",
               "EditorCaption": ""
             }
           ]

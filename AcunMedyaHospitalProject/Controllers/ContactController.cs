@@ -12,12 +12,24 @@ namespace AcunMedyaHospitalProject.Controllers
         // GET: Contact
         public ActionResult Index()
         {
-            ViewBag.Contacts = db.Contacts.ToList();
+            var contacts = db.Contacts.ToList();
+            ViewBag.Contacts = contacts;
+
+            if (!contacts.Any())  // Eğer hiç kayıt yoksa
+            {
+                ViewBag.Contact = null;
+            }
+            else
+            {
+                ViewBag.Contact = contacts.FirstOrDefault();
+            }
+
             return View();
         }
 
+
         [HttpPost]
-        public ActionResult AddContact(Contact contact)
+        public ActionResult CreateContact(Contact contact)
         {
             if (ModelState.IsValid)
             {
@@ -31,14 +43,31 @@ namespace AcunMedyaHospitalProject.Controllers
         [HttpPost]
         public ActionResult UpdateContact(Contact contact)
         {
+            if (contact.Id == 0)
+            {
+                return RedirectToAction("Index"); // ID eksikse hata vermemesi için
+            }
+
             if (ModelState.IsValid)
             {
-                db.Entry(contact).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var existingContact = db.Contacts.Find(contact.Id);
+                if (existingContact != null)
+                {
+                    existingContact.Address = contact.Address;
+                    existingContact.Phone = contact.Phone;
+                    existingContact.Email = contact.Email;
+                    existingContact.Longitude = contact.Longitude;
+                    existingContact.Latitute = contact.Latitute;
+
+                    db.Entry(existingContact).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
             }
-            return View("Index");
+
+            return RedirectToAction("Index");
         }
+
+
 
         [HttpPost]
         public ActionResult DeleteContact(int id)

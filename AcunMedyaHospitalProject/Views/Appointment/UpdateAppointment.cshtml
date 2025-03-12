@@ -51,31 +51,38 @@
 
 
 @section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
             $('#department-select').change(function () {
                 var departmentId = $(this).val();
-                console.log("Seçilen Departman ID:", departmentId); // Debug için
+
+                if (!departmentId) {
+                    console.warn("Bölüm ID boş!");
+                    return;
+                }
+
+                console.log("Seçilen Departman ID:", departmentId);
 
                 $.ajax({
-                    url: '@Url.Action("GetDoctorsByDepartment", "Appointment")',
+                    url: '/Appointment/GetDoctorsByDepartment', // HATA DÜZELTİLDİ (Eksik virgül eklendi)
                     type: 'GET',
                     data: { departmentId: departmentId },
                     success: function (data) {
-                        console.log("Gelen Doktorlar:", data); // Gelen veriyi kontrol et
                         var doctorSelect = $('#doctor-select');
                         doctorSelect.empty();
-                        doctorSelect.append('<option value="">Doktor seçin</option>');
+                        doctorSelect.append('<option value="">Doktor Seçin</option>');
 
-                        if (data.length === 0) {
+                        if (!data || data.length === 0) {
                             console.warn("Doktor listesi boş!");
+                            return;
                         }
 
                         $.each(data, function (i, doctor) {
                             doctorSelect.append('<option value="' + doctor.Id + '">' + doctor.FullName + '</option>');
                         });
 
-                        console.log("Dropdown'a doktorlar eklendi!");
+                        console.log("Doktorlar başarıyla yüklendi!");
                     },
                     error: function (xhr, status, error) {
                         console.error("AJAX Hatası:", status, error);

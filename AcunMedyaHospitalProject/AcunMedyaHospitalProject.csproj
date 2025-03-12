@@ -167,6 +167,10 @@
     <Compile Include="Migrations\202503051837418_UpdateDatabaseSchema.Designer.cs">
       <DependentUpon>202503051837418_UpdateDatabaseSchema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202503112358175_UpdateDateColumn.cs" />
+    <Compile Include="Migrations\202503112358175_UpdateDateColumn.Designer.cs">
+      <DependentUpon>202503112358175_UpdateDateColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1394,6 +1398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202503051837418_UpdateDatabaseSchema.resx">
       <DependentUpon>202503051837418_UpdateDatabaseSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202503112358175_UpdateDateColumn.resx">
+      <DependentUpon>202503112358175_UpdateDateColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

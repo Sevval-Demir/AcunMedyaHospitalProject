@@ -29,46 +29,48 @@
             <p class="card-description">
                 Randevuların bilgileri bu alanda gözükecektir.
             </p>
-            <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Doktor Adı</th>
-                            <th>Doktor Departmanı</th>
-                            <th>Tarih</th>
-                            <th>Hasta Adı</th>
-                            <th>Hasta Soyadı</th>
-                            <th>Hasta Telefon</th>
-                            <th>Hasta Mail</th>
-                            <th>Randevu Durum</th>
-                            <th>Onayla</th>
-                            <th>İptal Et</th>
-                            <th>Güncelle</th>
-                            <th>Kaldır</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
+            <div style="overflow-x:auto;">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
                             <tr>
-                                <td>@item.Id</td>
-                                <td>@item.Doctor.FullName</td>
-                                <td>@item.Doctor.Department.Name</td>
-                                <td>@item.Date.ToString("d") @item.Time.ToString()</td>
-                                <td>@item.PatientFirstName</td>
-                                <td>@item.PatientLastName</td>
-                                <td>@item.PatientPhone</td>
-                                <td>@item.PatientEmail</td>
-                                <td><label class="text-@GetStatus(item.Status)">@item.Status</label></td>
-                                <td><a class="btn btn-info" href="/Appointment/ApproveAppointment/@item.Id">Onayla</a></td>
-                                <td><a class="btn btn-warning" href="/Appointment/CancelAppointment/@item.Id">İptal Et</a></td>
-                                <td><a class="btn btn-success" href="/Appointment/UpdateAppointment/@item.Id">Güncelle</a></td>
-                                <td><a class="btn btn-danger" href="/Appointment/RemoveAppointment/@item.Id">Kaldır</a></td>
+                                <th>Id</th>
+                                <th>Doktor Adı</th>
+                                <th>Doktor Departmanı</th>
+                                <th>Tarih</th>
+                                <th>Hasta Adı</th>
+                                <th>Hasta Soyadı</th>
+                                <th>Hasta Telefon</th>
+                                <th>Hasta Mail</th>
+                                <th>Randevu Durum</th>
+                                <th>Onayla</th>
+                                <th>İptal Et</th>
+                                <th>Güncelle</th>
+                                <th>Kaldır</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Doctor.FullName</td>
+                                    <td>@item.Doctor.Department.Name</td>
+                                    <td>@item.Date.ToString("d") @item.Time.ToString()</td>
+                                    <td>@item.PatientFirstName</td>
+                                    <td>@item.PatientLastName</td>
+                                    <td>@item.PatientPhone</td>
+                                    <td>@item.PatientEmail</td>
+                                    <td><label class="text-@GetStatus(item.Status)">@item.Status</label></td>
+                                    <td><a class="btn btn-info" href="/Appointment/ApproveAppointment/@item.Id">Onayla</a></td>
+                                    <td><a class="btn btn-warning" href="/Appointment/CancelAppointment/@item.Id">İptal Et</a></td>
+                                    <td><a class="btn btn-success" href="/Appointment/UpdateAppointment/@item.Id">Güncelle</a></td>
+                                    <td><a class="btn btn-danger" href="/Appointment/DeleteAppointment/@item.Id">Kaldır</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <div class="mb-3">

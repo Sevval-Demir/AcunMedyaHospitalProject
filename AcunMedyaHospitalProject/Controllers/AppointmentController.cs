@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using AcunMedyaHospitalProject.Entities;
 
 namespace AcunMedyaHospitalProject.Controllers
 {
@@ -49,18 +50,25 @@ namespace AcunMedyaHospitalProject.Controllers
         [HttpGet]
         public ActionResult UpdateAppointment(int id)
         {
-            var appointment = db.Appointments.Include("Doctor").Include("Department").FirstOrDefault(a => a.Id == id);
+            var appointment = db.Appointments
+                .Include(a => a.Doctor)
+                .FirstOrDefault(a => a.Id == id);
 
             if (appointment == null)
             {
                 return HttpNotFound("Randevu bulunamadı.");
             }
 
-            ViewBag.Departments = new SelectList(db.Departments, "Id", "Name", appointment.DepartmentId);
-            ViewBag.Doctors = new SelectList(db.Doctors.Where(d => d.DepartmentId == appointment.DepartmentId), "Id", "FullName", appointment.DoctorId);
+            // Eğer Doctor varsa, bağlı olduğu DepartmentId’yi al
+            int? departmentId = appointment.Doctor != null ? appointment.Doctor.DepartmentId : (int?)null;
+
+            ViewBag.Departments = new SelectList(db.Departments, "Id", "Name", departmentId);
+            ViewBag.Doctors = new SelectList(db.Doctors.Where(d => d.DepartmentId == departmentId), "Id", "FullName", appointment.DoctorId);
 
             return View("UpdateAppointment", appointment);
         }
+
+
 
         [HttpPost]
         public ActionResult UpdateAppointment(Entities.Appointment appointment)
@@ -105,31 +113,51 @@ namespace AcunMedyaHospitalProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateAppointment(Entities.Appointment appointment)
+        public ActionResult CreateAppointment(Appointment appointment)
         {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Departments = new SelectList(db.Departments, "Id", "Name");
+                ViewBag.Doctors = new SelectList(Enumerable.Empty<SelectListItem>());
+                ModelState.AddModelError("", "Lütfen tüm alanları doldurun.");
+                return View(appointment);
+            }
 
-                if (!ModelState.IsValid)
-                {
-                    ViewBag.Departments = new SelectList(db.Departments, "Id", "Name");
-                    ViewBag.Doctors = new SelectList(Enumerable.Empty<SelectListItem>());
-                    return View(appointment);
-                }
+            // 🛑 DEBUG LOG - Date ve Time değerlerini kaydetmeden önce kontrol et
+            Console.WriteLine("DEBUG - Gelen Date Değeri: " + appointment.Date);
+            Console.WriteLine("DEBUG - Gelen Time Değeri: " + appointment.Time);
 
-                db.Appointments.Add(appointment);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+            if (appointment.Date == DateTime.MinValue || appointment.Date < new DateTime(1753, 1, 1))
+            {
+                ModelState.AddModelError("Date", "Geçerli bir tarih seçmelisiniz. 1753 yılından küçük olamaz.");
+                ViewBag.Departments = new SelectList(db.Departments, "Id", "Name");
+                ViewBag.Doctors = new SelectList(Enumerable.Empty<SelectListItem>());
+                return View(appointment);
+            }
 
+            db.Appointments.Add(appointment);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
 
         [HttpGet]
         public JsonResult GetDoctorsByDepartment(int departmentId)
         {
-            var doctors = db.Doctors.Where(d => d.DepartmentId == departmentId)
-                                    .Select(d => new { d.Id, FullName = d.FirstName + " " + d.LastName })
-                                    .ToList();
+            if (departmentId <= 0)
+            {
+                return Json(new { error = "Geçersiz bölüm ID" }, JsonRequestBehavior.AllowGet);
+            }
+
+            var doctors = db.Doctors
+                            .Where(d => d.DepartmentId == departmentId)
+                            .Select(d => new { d.Id, FullName = d.FirstName + " " + d.LastName })
+                            .ToList();
+
             return Json(doctors, JsonRequestBehavior.AllowGet);
         }
+
+
 
     }
 }
