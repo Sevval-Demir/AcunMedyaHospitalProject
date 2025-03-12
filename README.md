@@ -23,32 +23,6 @@ AcunMedya Hospital Project, modern hastaneler için geliştirilmiş, doktor, has
 
 ---
 
-## 📥 Kurulum & Çalıştırma
-
-Bu projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları takip edin:
-
-### 1️⃣ Projeyi Klonlayın
-```sh
-git clone https://github.com/Sevval-Demir/AcunMedyaHospitalProject.git
-cd AcunMedyaHospitalProject
-```
-
-### 2️⃣ Bağımlılıkları Yükleyin
-- Visual Studio ile projeyi açın.
-- Gerekli **NuGet paketlerini** yükleyin.
-
-### 3️⃣ Veritabanını Ayarlayın
-- **SQL Server'da** uygun veritabanını oluşturun.
-- **`appsettings.json`** dosyasında bağlantı dizesini güncelleyin.
-
-### 4️⃣ Projeyi Çalıştırın
-```sh
-dotnet run
-```
-veya **Visual Studio'da IIS Express** ile başlatın.
-
----
-
 ## 🎨 Kullanım (Ekran Görüntüleri)
 ### 🌍 Ana Sayfa
 ![Ana Sayfa](https://github.com/Sevval-Demir/AcunMedyaHospitalProject/blob/main/Screenshot%202025-03-12%20050153.png)
@@ -68,17 +42,6 @@ veya **Visual Studio'da IIS Express** ile başlatın.
 ### 📍 İletişim & Harita
 ![İletişim](https://github.com/Sevval-Demir/AcunMedyaHospitalProject/blob/main/Screenshot%202025-03-12%20051559.png)
 
-> **Not:** Ekran görüntülerini **GitHub'daki `/screenshots`** klasörüne yükleyerek bu bağlantıları etkin hale getirin.
-
----
-
-## 💡 Katkıda Bulunma
-Projeye katkıda bulunmak mı istiyorsunuz? Harika! 🎉 Aşağıdaki adımları takip ederek projeye katkı sağlayabilirsiniz:
-
-1️⃣ **Projeyi Fork'layın** 📌
-2️⃣ **Yeni bir branch oluşturun:** `git checkout -b yeni-ozellik`
-3️⃣ **Geliştirmelerinizi yapın ve commitleyin** ✨
-4️⃣ **Pull request gönderin!** 🚀
 
 
 ## 📧 İletişim
