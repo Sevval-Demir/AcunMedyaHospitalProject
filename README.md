@@ -1,7 +1,5 @@
 # 🌟 AcunMedya Hospital Project 🏥
 
-![Ana Sayfa](./screenshots/homepage.png)
-
 ## 📌 Proje Açıklaması
 AcunMedya Hospital Project, modern hastaneler için geliştirilmiş, doktor, hasta ve yöneticiler için güçlü yönetim araçları sunan kapsamlı bir sağlık yönetim sistemidir. Kullanıcı dostu arayüzü, gelişmiş randevu sistemi ve detaylı istatistiksel analizleri ile sağlık hizmetlerini dijital dünyaya taşır.
 
@@ -53,22 +51,22 @@ veya **Visual Studio'da IIS Express** ile başlatın.
 
 ## 🎨 Kullanım (Ekran Görüntüleri)
 ### 🌍 Ana Sayfa
-![Ana Sayfa](./screenshots/homepage.png)
+![Ana Sayfa](https://github.com/Sevval-Demir/AcunMedyaHospitalProject/blob/main/Screenshot%202025-03-12%20050153.png)
 
 ### 🏥 Hizmetler
-![Hizmetler](./screenshots/services.png)
+![Hizmetler](https://github.com/Sevval-Demir/AcunMedyaHospitalProject/blob/main/Screenshot%202025-03-12%20050200.png)![Hizmetler](https://github.com/Sevval-Demir/AcunMedyaHospitalProject/blob/main/Screenshot%202025-03-12%20050208.png)
 
 ### 👨‍⚕️ Doktorlar
-![Doktorlar](./screenshots/doctors.png)
+![Doktorlar](https://github.com/Sevval-Demir/AcunMedyaHospitalProject/blob/main/Screenshot%202025-03-12%20050309.png)![Doktorlar](https://github.com/Sevval-Demir/AcunMedyaHospitalProject/blob/main/Screenshot%202025-03-12%20051518.png)
 
 ### 📅 Randevu Yönetimi
-![Randevu Yönetimi](./screenshots/appointments.png)
+![Randevu Yönetimi](https://github.com/Sevval-Demir/AcunMedyaHospitalProject/blob/main/Screenshot%202025-03-12%20050348.png)
 
 ### 🛠️ Yönetici Paneli
-![Admin Panel](./screenshots/adminpanel.png)
+![Admin Panel](https://github.com/Sevval-Demir/AcunMedyaHospitalProject/blob/main/Screenshot%202025-03-12%20050620.png)
 
 ### 📍 İletişim & Harita
-![İletişim](./screenshots/contact.png)
+![İletişim](https://github.com/Sevval-Demir/AcunMedyaHospitalProject/blob/main/Screenshot%202025-03-12%20051559.png)
 
 > **Not:** Ekran görüntülerini **GitHub'daki `/screenshots`** klasörüne yükleyerek bu bağlantıları etkin hale getirin.
 
