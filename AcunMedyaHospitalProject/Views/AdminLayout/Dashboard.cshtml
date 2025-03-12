@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Admin Paneli</h2>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card bg-primary text-white">
+            <div class="card-body">
+                <h4>Toplam Doktor</h4>
+                <h2>@ViewBag.TotalDoctors</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card bg-info text-white">
+            <div class="card-body">
+                <h4>Toplam Bölüm</h4>
+                <h2>@ViewBag.TotalDepartments</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card bg-success text-white">
+            <div class="card-body">
+                <h4>Toplam Randevu</h4>
+                <h2>@ViewBag.TotalAppointments</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-lg-4">
+        <div class="card bg-warning text-white">
+            <div class="card-body">
+                <h4>Bekleyen Randevular</h4>
+                <h2>@ViewBag.PendingAppointments</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card bg-success text-white">
+            <div class="card-body">
+                <h4>Onaylanan Randevular</h4>
+                <h2>@ViewBag.ApprovedAppointments</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card bg-danger text-white">
+            <div class="card-body">
+                <h4>İptal Edilen Randevular</h4>
+                <h2>@ViewBag.CancelledAppointments</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h3 class="mt-4">Son 6 Aylık Randevu Sayısı</h3>
+<canvas id="appointmentChart" width="400" height="200"></canvas>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Url.Action("GetAppointmentStats", "Admin")',
+                type: 'GET',
+                success: function (data) {
+                    var labels = data.map(x => x.Month + "/" + x.Year);
+                    var counts = data.map(x => x.Count);
+
+                    var ctx = document.getElementById("appointmentChart").getContext("2d");
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Randevu Sayısı',
+                                data: counts,
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error("AJAX Hatası:", status, error);
+                }
+            });
+        });
+    </script>
+}

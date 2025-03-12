@@ -26,5 +26,6 @@ namespace AcunMedyaHospitalProject.Controllers
 
             return View();
         }
+
     }
 }

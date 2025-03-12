@@ -18,6 +18,12 @@ namespace AcunMedyaHospitalProject
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "AdminLayoutDashboard",
+                url: "AdminLayout/Dashboard",
+                defaults: new { controller = "AdminLayout", action = "Dashboard" }
+            );
         }
     }
 }
